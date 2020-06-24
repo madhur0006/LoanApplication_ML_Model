@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="#ApprovedLoan" placeholder="ApprovedLoan" required="required" />
+		<input type="text" name="Age" placeholder="Age" required="required" />
+		<input type="text" name="Bank" placeholder="Bank" required="required" />
+		<br>
+		<input type="text" name="Birth City_Freq" placeholder="Birth City_Freq" required="required" />
+		<input type="text" name="Gender_Male_Female_encode" placeholder="Gender_Male_Female_encode(M=1,F=1)" required="required" />
+		<input type="text" name="Has a Registered phone Number" placeholder="Has a Registered phone Number" required="required" />
+		<br>
+		<input type="text" name="Has family members Registered" placeholder="Has family members Registered" required="required" />
+		<input type="text" name="How many in punishment" placeholder="How many in punishment" required="required" />
+		<input type="text" name="Legal accounts" placeholder="Legal accounts" required="required" />
+		<br>
+		<input type="text" name="Overdue accounts" placeholder="Overdue accounts" required="required" />
+		<input type="text" name="account_in_back" placeholder="account_in_back" required="required" />
+		<input type="text" name="approximate_income" placeholder="approximate_income" required="required" />
+		<br>
+		<input type="text" name="as_us_contact_Freq" placeholder="as_us_contact_Freq" required="required" />
+		<input type="text" name="client type" placeholder="client type" required="required" />
+		<input type="text" name="closed account" placeholder="closed account" required="required" />
+		<br>
+		<input type="text" name="company_months" placeholder="company_months" required="required" />
+		<input type="text" name="normal_account" placeholder="normal_account" required="required" />
+		<input type="text" name="principal_amount" placeholder="principal_amount" required="required" />
+		<br>
+		<input type="text" name="purpose_credit_Freq" placeholder="purpose_credit_Freq" required="required" />
+		<input type="text" name="salary" placeholder="salary" required="required" />
+        <input type="text" name="term_frequency" placeholder="Term Frequency" required="required" />
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
